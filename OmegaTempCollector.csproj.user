@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\업무\온습도개발\소스\CBTP\Omega_modify\OmegaTempCollector\OmegaTempCollector\RaonCollectorForFarm\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Control\MonServerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\ProjectControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SensorCo2Control.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SensorLightControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SensorOmegaControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SensorTempControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Simulate\SensorControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Simulate\SimulateWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SetConfig.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Control\MonServerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\ProjectControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SensorCo2Control.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SensorLightControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SensorOmegaControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SensorTempControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Simulate\SensorControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Simulate\SimulateWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SetConfig.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
