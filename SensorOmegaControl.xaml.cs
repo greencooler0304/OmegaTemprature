@@ -31,11 +31,17 @@ namespace OmegaTempCollector.Control
             InitializeComponent();
             loadModule();
 
-            tb1.Text = sensorOmegaTemp.Device1.Title;
-            tb2.Text = sensorOmegaTemp.Device2.Title;
-            tb3.Text = sensorOmegaTemp.Device3.Title;
-            tb4.Text = sensorOmegaTemp.Device4.Title;
-            tb5.Text = sensorOmegaTemp.Device5.Title;
+            tb1A.Text = sensorOmegaTemp.Device1.TitleA;
+            tb2A.Text = sensorOmegaTemp.Device2.TitleA;
+            tb3A.Text = sensorOmegaTemp.Device3.TitleA;
+            tb4A.Text = sensorOmegaTemp.Device4.TitleA;
+            tb5A.Text = sensorOmegaTemp.Device5.TitleA;
+
+            tb1B.Text = sensorOmegaTemp.Device1.TitleB;
+            tb2B.Text = sensorOmegaTemp.Device2.TitleB;
+            tb3B.Text = sensorOmegaTemp.Device3.TitleB;
+            tb4B.Text = sensorOmegaTemp.Device4.TitleB;
+            tb5B.Text = sensorOmegaTemp.Device5.TitleB;
         }
 
         void loadModule()
@@ -79,10 +85,12 @@ namespace OmegaTempCollector.Control
     {
         [XmlAttribute] public string Name { get; set; }
         [XmlAttribute] public string Address { get; set; }
-        [XmlAttribute] public string Title { get; set; }
-        [XmlAttribute] public string Correction { get; set; }
-        [XmlAttribute] public string Plus { get; set; }
-
+        [XmlAttribute] public string TitleA { get; set; }
+        [XmlAttribute] public string CorrectionA { get; set; }
+        [XmlAttribute] public string PlusA { get; set; }
+        [XmlAttribute] public string TitleB { get; set; }
+        [XmlAttribute] public string CorrectionB { get; set; }
+        [XmlAttribute] public string PlusB { get; set; }
     }
 
     public class SensorOmegaTemp : BaseModel, Xml.ITarget
@@ -98,9 +106,12 @@ namespace OmegaTempCollector.Control
         {
             public string IpAddress;
             public string Name;
-            public string title;
-            public string correction; 
-            public string plus; 
+            public string titleA;
+            public string correctionA; 
+            public string plusA;
+            public string titleB;
+            public string correctionB;
+            public string plusB;
         }
 
         OmegaDevice omgDev1, omgDev2, omgDev3, omgDev4, omgDev5;
@@ -115,42 +126,57 @@ namespace OmegaTempCollector.Control
             OmegaDevice omgDevTemp;
 
             omgDevTemp.Name = Device1.Name;
-            omgDevTemp.title = Device1.Title;
             omgDevTemp.IpAddress = Device1.Address;
-            omgDevTemp.correction = Device1.Correction;
-            omgDevTemp.plus = Device1.Plus;
+            omgDevTemp.titleA = Device1.TitleA;
+            omgDevTemp.correctionA = Device1.CorrectionA;
+            omgDevTemp.plusA = Device1.PlusA;
+            omgDevTemp.titleB = Device1.TitleB;
+            omgDevTemp.correctionB = Device1.CorrectionB;
+            omgDevTemp.plusB = Device1.PlusB;
 
             arrOmegaDevices.Add(omgDevTemp);
 
             omgDevTemp.Name = Device2.Name;
-            omgDevTemp.title = Device2.Title;
             omgDevTemp.IpAddress = Device2.Address;
-            omgDevTemp.correction = Device2.Correction;
-            omgDevTemp.plus = Device2.Plus;
+            omgDevTemp.titleA = Device2.TitleA;
+            omgDevTemp.correctionA = Device2.CorrectionA;
+            omgDevTemp.plusA = Device2.PlusA;
+            omgDevTemp.titleB = Device2.TitleB;
+            omgDevTemp.correctionB = Device2.CorrectionB;
+            omgDevTemp.plusB = Device2.PlusB;
 
             arrOmegaDevices.Add(omgDevTemp);
 
             omgDevTemp.Name = Device3.Name;
-            omgDevTemp.title = Device3.Title;
             omgDevTemp.IpAddress = Device3.Address;
-            omgDevTemp.correction = Device3.Correction;
-            omgDevTemp.plus = Device3.Plus;
+            omgDevTemp.titleA = Device3.TitleA;
+            omgDevTemp.correctionA = Device3.CorrectionA;
+            omgDevTemp.plusA = Device3.PlusA;
+            omgDevTemp.titleB = Device3.TitleB;
+            omgDevTemp.correctionB = Device3.CorrectionB;
+            omgDevTemp.plusB = Device3.PlusB;
 
             arrOmegaDevices.Add(omgDevTemp);
 
             omgDevTemp.Name = Device4.Name;
-            omgDevTemp.title = Device4.Title;
             omgDevTemp.IpAddress = Device4.Address;
-            omgDevTemp.correction = Device4.Correction;
-            omgDevTemp.plus = Device4.Plus;
+            omgDevTemp.titleA = Device4.TitleA;
+            omgDevTemp.correctionA = Device4.CorrectionA;
+            omgDevTemp.plusA = Device4.PlusA;
+            omgDevTemp.titleB = Device4.TitleB;
+            omgDevTemp.correctionB = Device4.CorrectionB;
+            omgDevTemp.plusB = Device4.PlusB;
 
             arrOmegaDevices.Add(omgDevTemp);
 
             omgDevTemp.Name = Device5.Name;
-            omgDevTemp.title = Device5.Title;
             omgDevTemp.IpAddress = Device5.Address;
-            omgDevTemp.correction = Device5.Correction;
-            omgDevTemp.plus = Device5.Plus;
+            omgDevTemp.titleA = Device5.TitleA;
+            omgDevTemp.correctionA = Device5.CorrectionA;
+            omgDevTemp.plusA = Device5.PlusA;
+            omgDevTemp.titleB = Device5.TitleB;
+            omgDevTemp.correctionB = Device5.CorrectionB;
+            omgDevTemp.plusB = Device5.PlusB;
 
             arrOmegaDevices.Add(omgDevTemp);
 
@@ -173,11 +199,17 @@ namespace OmegaTempCollector.Control
         [XmlAttribute] public string TemptureValue { get; set; }
 
         DateTime run_time;
-        DateTime last_start_delay_time1;
-        DateTime last_start_delay_time2;
-        DateTime last_start_delay_time3;
-        DateTime last_start_delay_time4;
-        DateTime last_start_delay_time5;
+        DateTime last_start_delay_time1A;
+        DateTime last_start_delay_time2A;
+        DateTime last_start_delay_time3A;
+        DateTime last_start_delay_time4A;
+        DateTime last_start_delay_time5A;
+
+        DateTime last_start_delay_time1B;
+        DateTime last_start_delay_time2B;
+        DateTime last_start_delay_time3B;
+        DateTime last_start_delay_time4B;
+        DateTime last_start_delay_time5B;
 
         public class _Service : Service
         {
@@ -205,71 +237,139 @@ namespace OmegaTempCollector.Control
         }
         [XmlIgnore] public _Service service = null;
 
-        string _Temprature1 = "0";
-        string _Temprature2 = "0";
-        string _Temprature3 = "0";
-        string _Temprature4 = "0";
-        string _Temprature5 = "0";
+        string _Temprature1A = "0";
+        string _Temprature2A = "0";
+        string _Temprature3A = "0";
+        string _Temprature4A = "0";
+        string _Temprature5A = "0";
+
+        string _Temprature1B = "0";
+        string _Temprature2B = "0";
+        string _Temprature3B = "0";
+        string _Temprature4B = "0";
+        string _Temprature5B = "0";
 
         [XmlIgnore]
-        public string Temprature1
+        public string Temprature1A
         {
-            get { return _Temprature1; }
+            get { return _Temprature1A; }
             set
             {
-                if (_Temprature1 != value)
+                if (_Temprature1A != value)
                 {
-                    _Temprature1 = value;
-                    OnPropertyChange("Temprature1");
+                    _Temprature1A = value;
+                    OnPropertyChange("Temprature1A");
                 }
             }
         }
 
-        public string Temprature2
+        public string Temprature2A
         {
-            get { return _Temprature2; }
+            get { return _Temprature2A; }
             set
             {
-                if (_Temprature2 != value)
+                if (_Temprature2A != value)
                 {
-                    _Temprature2 = value;
-                    OnPropertyChange("Temprature2");
+                    _Temprature2A = value;
+                    OnPropertyChange("Temprature2A");
                 }
             }
         }
-        public string Temprature3
+        public string Temprature3A
         {
-            get { return _Temprature3; }
+            get { return _Temprature3A; }
             set
             {
-                if (_Temprature3 != value)
+                if (_Temprature3A != value)
                 {
-                    _Temprature3 = value;
-                    OnPropertyChange("Temprature3");
+                    _Temprature3A = value;
+                    OnPropertyChange("Temprature3A");
                 }
             }
         }
-        public string Temprature4
+        public string Temprature4A
         {
-            get { return _Temprature4; }
+            get { return _Temprature4A; }
             set
             {
-                if (_Temprature4 != value)
+                if (_Temprature4A != value)
                 {
-                    _Temprature4 = value;
-                    OnPropertyChange("Temprature4");
+                    _Temprature4A = value;
+                    OnPropertyChange("Temprature4A");
                 }
             }
         }
-        public string Temprature5
+        public string Temprature5A
         {
-            get { return _Temprature5; }
+            get { return _Temprature5A; }
             set
             {
-                if (_Temprature5 != value)
+                if (_Temprature5A != value)
                 {
-                    _Temprature5 = value;
-                    OnPropertyChange("Temprature5");
+                    _Temprature5A = value;
+                    OnPropertyChange("Temprature5A");
+                }
+            }
+        }
+
+        public string Temprature1B
+        {
+            get { return _Temprature1B; }
+            set
+            {
+                if (_Temprature1B != value)
+                {
+                    _Temprature1B = value;
+                    OnPropertyChange("Temprature1B");
+                }
+            }
+        }
+
+        public string Temprature2B
+        {
+            get { return _Temprature2B; }
+            set
+            {
+                if (_Temprature2B != value)
+                {
+                    _Temprature2B = value;
+                    OnPropertyChange("Temprature2B");
+                }
+            }
+        }
+        public string Temprature3B
+        {
+            get { return _Temprature3B; }
+            set
+            {
+                if (_Temprature3B != value)
+                {
+                    _Temprature3B = value;
+                    OnPropertyChange("Temprature3B");
+                }
+            }
+        }
+        public string Temprature4B
+        {
+            get { return _Temprature4B; }
+            set
+            {
+                if (_Temprature4B != value)
+                {
+                    _Temprature4B = value;
+                    OnPropertyChange("Temprature4B");
+                }
+            }
+        }
+        public string Temprature5B
+        {
+            get { return _Temprature5B; }
+            set
+            {
+                if (_Temprature5B != value)
+                {
+                    _Temprature5B = value;
+                    OnPropertyChange("Temprature5B");
                 }
             }
         }
@@ -302,14 +402,19 @@ namespace OmegaTempCollector.Control
         UdpTimeouts arrDevices;
 
         public static bool messageReceived = false;
-        public static bool messageReceived1 = false;
-        public static bool messageReceived2 = false;
-        public static bool messageReceived3 = false;
-        public static bool messageReceived4 = false;
-        public static bool messageReceived5 = false;
+        public static bool messageReceived1A = false;
+        public static bool messageReceived2A = false;
+        public static bool messageReceived3A = false;
+        public static bool messageReceived4A = false;
+        public static bool messageReceived5A = false;
 
+        public static bool messageReceived1B = false;
+        public static bool messageReceived2B = false;
+        public static bool messageReceived3B = false;
+        public static bool messageReceived4B = false;
+        public static bool messageReceived5B = false;
 
-        protected int CheckMessage(string sData, IPEndPoint e)
+        protected int CheckMessage(string sData, IPEndPoint e, ref string sVal)
         {
             IPAddress DataAddress = e.Address;
             string sAddress = DataAddress.ToString();
@@ -325,22 +430,41 @@ namespace OmegaTempCollector.Control
 
             if (bMatch)
             {
-                string sTemp = sData.Substring(2, 2);
-
-                int i = 0;
-                
-                // 숫자인지 아닌지 판단
-                result = int.TryParse(sTemp, out i);
-
-                if(result)
+                if(sData.Substring(0,2) == "TA" || sData.Substring(0, 2) == "TB")
                 {
-                    arrDevices.DataGetTime = DateTime.Now; 
-                    iResult = 0; 
+                    //string sTemp = sData.Substring(2, 2);
+                    string sTemp = ""; 
+
+                   for(int j = 2; j < sData.Length; j++)
+                    {
+                        if (sData[j] != 'C')
+                        {
+                            sTemp += sData[j];
+                        }
+                        else
+                            break; 
+                    }
+
+                    float f = 0;
+
+                    // 숫자인지 아닌지 판단
+                    result = float.TryParse(sTemp, out f);
+
+                    if (result)
+                    {
+                        arrDevices.DataGetTime = DateTime.Now;
+                        sVal = sTemp; 
+                        iResult = 0;
+                    }
+                    else
+                    {
+                        // 온도값 이외의 데이터 수신
+                        iResult = 2;
+                    }
                 }
                 else
                 {
-                    // 온도값 이외의 데이터 수신
-                    iResult = 2;
+                    return -1; 
                 }
             }
             else 
@@ -363,7 +487,9 @@ namespace OmegaTempCollector.Control
                 byte[] receiveBytes = u.EndReceive(ar, ref e);
                 string receiveString = Encoding.ASCII.GetString(receiveBytes);
 
-                int checkResult = CheckMessage(receiveString, e);
+                string sVal = ""; 
+
+                int checkResult = CheckMessage(receiveString, e, ref sVal);
 
                 IPAddress DataAddress = e.Address;
                 string sAddress = DataAddress.ToString();
@@ -376,78 +502,163 @@ namespace OmegaTempCollector.Control
                 switch (checkResult)
                 {
                     case 0:
-                        string sTempValue = receiveString.Substring(2, 5);
-                        //Logger.info(sTempValue);
-                        orgTemp = Convert.ToDouble(sTempValue);
+                        //string sTempValue = receiveString.Substring(2, 5);
+                        //string sTempValue = sVal;
+                        string sSensorKind = receiveString.Substring(0, 2);
 
-                        if (sAddress == arrOmegaDevices[0].IpAddress)
+                        float f = 0;
+
+                        bool result = float.TryParse(sVal, out f);
+
+                        if(result && f < 3000)
                         {
-                            correctTemp = Convert.ToDouble(arrOmegaDevices[0].correction);
+                            orgTemp = Convert.ToDouble(sVal);
 
-                            if (arrOmegaDevices[0].plus == "true")    resultTemp = orgTemp + correctTemp; 
-                            else                                      resultTemp = orgTemp - correctTemp;
+                            if (sAddress == arrOmegaDevices[0].IpAddress)
+                            {
+                                if (sSensorKind == "TA")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[0].correctionA);
 
-                            Temprature1 = resultTemp.ToString();
+                                    if (arrOmegaDevices[0].plusA == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
 
-                            Logger.save1(resultTemp.ToString());
-                            last_start_delay_time1 = DateTime.Now;
-                            messageReceived1 = true; 
+                                    Temprature1A = resultTemp.ToString();
 
-                        }
-                        else if (sAddress == arrOmegaDevices[1].IpAddress)
-                        {
-                            correctTemp = Convert.ToDouble(arrOmegaDevices[1].correction);
+                                    Logger.save1A(resultTemp.ToString());
+                                    last_start_delay_time1A = DateTime.Now;
+                                    messageReceived1A = true;
+                                }
+                                else if (sSensorKind == "TB")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[0].correctionB);
 
-                            if (arrOmegaDevices[1].plus == "true") resultTemp = orgTemp + correctTemp;
-                            else resultTemp = orgTemp - correctTemp;
+                                    if (arrOmegaDevices[0].plusB == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
 
-                            Temprature2 = resultTemp.ToString().Substring(0,5);
+                                    Temprature1B = resultTemp.ToString();
 
-                            Logger.save2(resultTemp.ToString().Substring(0, 5));
-                            last_start_delay_time2 = DateTime.Now;
-                            messageReceived2 = true;
-                        }
-                        else if (sAddress == arrOmegaDevices[2].IpAddress)
-                        {
-                            correctTemp = Convert.ToDouble(arrOmegaDevices[2].correction);
+                                    Logger.save1B(resultTemp.ToString());
+                                    last_start_delay_time1B = DateTime.Now;
+                                    messageReceived1B = true;
+                                }
+                            }
+                            else if (sAddress == arrOmegaDevices[1].IpAddress)
+                            {
+                                if (sSensorKind == "TA")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[1].correctionA);
 
-                            if (arrOmegaDevices[2].plus == "true") resultTemp = orgTemp + correctTemp;
-                            else resultTemp = orgTemp - correctTemp;
+                                    if (arrOmegaDevices[1].plusA == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
 
-                            Temprature3 = resultTemp.ToString();
+                                    Temprature2A = resultTemp.ToString();
 
-                            Logger.save3(resultTemp.ToString());
-                            last_start_delay_time3 = DateTime.Now;
-                            messageReceived3 = true;
+                                    Logger.save2A(resultTemp.ToString());
+                                    last_start_delay_time2A = DateTime.Now;
+                                    messageReceived2A = true;
+                                }
+                                else if (sSensorKind == "TB")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[1].correctionB);
 
-                        }
-                        else if (sAddress == arrOmegaDevices[3].IpAddress)
-                        {
-                            correctTemp = Convert.ToDouble(arrOmegaDevices[3].correction);
+                                    if (arrOmegaDevices[1].plusB == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
 
-                            if (arrOmegaDevices[3].plus == "true") resultTemp = orgTemp + correctTemp;
-                            else resultTemp = orgTemp - correctTemp;
+                                    Temprature2B = resultTemp.ToString();
 
-                            Temprature4 = resultTemp.ToString();
+                                    Logger.save2B(resultTemp.ToString());
+                                    last_start_delay_time2B = DateTime.Now;
+                                    messageReceived2B = true;
+                                }
+                            }
+                            else if (sAddress == arrOmegaDevices[2].IpAddress)
+                            {
+                                if (sSensorKind == "TA")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[2].correctionA);
 
-                            Logger.save3(resultTemp.ToString());
-                            last_start_delay_time4 = DateTime.Now;
-                            messageReceived4 = true;
+                                    if (arrOmegaDevices[2].plusA == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
 
-                        }
-                        else if (sAddress == arrOmegaDevices[4].IpAddress)
-                        {
-                            correctTemp = Convert.ToDouble(arrOmegaDevices[4].correction);
+                                    Temprature3A = resultTemp.ToString().Substring(0, 5);
 
-                            if (arrOmegaDevices[4].plus == "true") resultTemp = orgTemp + correctTemp;
-                            else resultTemp = orgTemp - correctTemp;
+                                    Logger.save3A(resultTemp.ToString().Substring(0, 5));
+                                    last_start_delay_time3A = DateTime.Now;
+                                    messageReceived3A = true;
+                                }
+                                else if (sSensorKind == "TB")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[2].correctionB);
 
-                            Temprature5 = resultTemp.ToString();
+                                    if (arrOmegaDevices[1].plusB == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
 
-                            Logger.save5(resultTemp.ToString());
-                            last_start_delay_time5 = DateTime.Now;
-                            messageReceived5 = true;
+                                    Temprature3B = resultTemp.ToString().Substring(0, 5);
 
+                                    Logger.save3B(resultTemp.ToString().Substring(0, 5));
+                                    last_start_delay_time3B = DateTime.Now;
+                                    messageReceived3B = true;
+                                }
+                            }
+                            else if (sAddress == arrOmegaDevices[3].IpAddress)
+                            {
+                                if (sSensorKind == "TA")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[3].correctionA);
+
+                                    if (arrOmegaDevices[3].plusA == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
+
+                                    Temprature4A = resultTemp.ToString();
+
+                                    Logger.save4A(resultTemp.ToString());
+                                    last_start_delay_time4A = DateTime.Now;
+                                    messageReceived4A = true;
+                                }
+                                else if (sSensorKind == "TB")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[3].correctionB);
+
+                                    if (arrOmegaDevices[3].plusB == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
+
+                                    Temprature4B = resultTemp.ToString();
+
+                                    Logger.save4B(resultTemp.ToString());
+                                    last_start_delay_time4B = DateTime.Now;
+                                    messageReceived4B = true;
+                                }
+                            }
+                            else if (sAddress == arrOmegaDevices[4].IpAddress )
+                            {
+                                if (sSensorKind == "TA")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[4].correctionA);
+
+                                    if (arrOmegaDevices[4].plusA == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
+
+                                    Temprature5A = resultTemp.ToString();
+
+                                    Logger.save5A(resultTemp.ToString());
+                                    last_start_delay_time5A = DateTime.Now;
+                                    messageReceived5A = true;
+                                }
+                                else if (sSensorKind == "TB")
+                                {
+                                    correctTemp = Convert.ToDouble(arrOmegaDevices[4].correctionB);
+
+                                    if (arrOmegaDevices[4].plusB == "true") resultTemp = orgTemp + correctTemp;
+                                    else resultTemp = orgTemp - correctTemp;
+
+                                    Temprature5B = resultTemp.ToString();
+
+                                    Logger.save5B(resultTemp.ToString());
+                                    last_start_delay_time5B = DateTime.Now;
+                                    messageReceived5B = true;
+                                }
+                            }
                         }
                         break;
                     case 1:
@@ -470,16 +681,23 @@ namespace OmegaTempCollector.Control
 
                 //last_start_delay_time = DateTime.Now;
             }
-
+            else
+            {
+                u.EndReceive(ar, ref e);
+            }
 
             messageReceived = true;
 
             //Console.WriteLine($"Received: {receiveString}");
         }
 
-        static IPEndPoint e = new IPEndPoint(IPAddress.Any, 2000);
-        static UdpClient u = new UdpClient(e);
-        static UdpState s = new UdpState();
+        //static IPEndPoint e = new IPEndPoint(IPAddress.Any, 2000);
+        //static UdpClient u = new UdpClient(e);
+        //static UdpState s = new UdpState();
+
+        static IPEndPoint e;
+        static UdpClient u;
+        static UdpState s;
 
         public void ReceiveMessages()
         {
@@ -492,11 +710,17 @@ namespace OmegaTempCollector.Control
             if (thread_run)
             {
                 messageReceived = false;
-                messageReceived1 = false;
-                messageReceived2 = false;
-                messageReceived3 = false;
-                messageReceived4 = false;
-                messageReceived5 = false;
+                messageReceived1A = false;
+                messageReceived2A = false;
+                messageReceived3A = false;
+                messageReceived4A = false;
+                messageReceived5A = false;
+
+                messageReceived1B = false;
+                messageReceived2B = false;
+                messageReceived3B = false;
+                messageReceived4B = false;
+                messageReceived5B = false;
 
                 //Console.WriteLine("listening for messages");
                 u.BeginReceive(new AsyncCallback(ReceiveCallback), s);
@@ -505,62 +729,102 @@ namespace OmegaTempCollector.Control
                 //while (!messageReceived)
                 {
                     
-                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time1).TotalMilliseconds) & !messageReceived1)
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time1A).TotalMilliseconds) & !messageReceived1A)
                     {
-                        PrintLog("Omega", "Device1 Stop");
-                        Logger.save1("Stop");
-                        last_start_delay_time1 = DateTime.Now;
+                        PrintLog("Omega", "Device1 TA Stop");
+                        Logger.save1A("Stop");
+                        last_start_delay_time1A = DateTime.Now;
                     }
 
-                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time2).TotalMilliseconds) & !messageReceived2)
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time2A).TotalMilliseconds) & !messageReceived2A)
                     {
-                        PrintLog("Omega", "Device2 Stop");
-                        Logger.save2("Stop");
-                        last_start_delay_time2 = DateTime.Now;
+                        PrintLog("Omega", "Device2 TA Stop");
+                        Logger.save2A("Stop");
+                        last_start_delay_time2A = DateTime.Now;
                     }
 
-                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time3).TotalMilliseconds) & !messageReceived3)
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time3A).TotalMilliseconds) & !messageReceived3A)
                     {
-                        PrintLog("Omega", "Device3 Stop");
-                        Logger.save3("Stop");
-                        last_start_delay_time3 = DateTime.Now;
+                        PrintLog("Omega", "Device3 TA Stop");
+                        Logger.save3A("Stop");
+                        last_start_delay_time3A = DateTime.Now;
                     }
 
-                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time4).TotalMilliseconds) & !messageReceived4)
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time4A).TotalMilliseconds) & !messageReceived4A)
                     {
-                        PrintLog("Omega", "Device4 Stop");
-                        Logger.save4("Stop");
-                        last_start_delay_time4 = DateTime.Now;
+                        PrintLog("Omega", "Device4 TA Stop");
+                        Logger.save4A("Stop");
+                        last_start_delay_time4A = DateTime.Now;
                     }
 
-                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time5).TotalMilliseconds) & !messageReceived5)
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time5A).TotalMilliseconds) & !messageReceived5A)
                     {
-                        PrintLog("Omega", "Device5 Stop");
-                        Logger.save5("Stop");
-                        last_start_delay_time5 = DateTime.Now;
+                        PrintLog("Omega", "Device5 TA Stop");
+                        Logger.save5A("Stop");
+                        last_start_delay_time5A = DateTime.Now;
+                    }
+
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time1B).TotalMilliseconds) & !messageReceived1B)
+                    {
+                        PrintLog("Omega", "Device1 TB Stop");
+                        Logger.save1B("Stop");
+                        last_start_delay_time1B = DateTime.Now;
+                    }
+
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time2B).TotalMilliseconds) & !messageReceived2B)
+                    {
+                        PrintLog("Omega", "Device2 TB Stop");
+                        Logger.save2B("Stop");
+                        last_start_delay_time2B = DateTime.Now;
+                    }
+
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time3B).TotalMilliseconds) & !messageReceived3B)
+                    {
+                        PrintLog("Omega", "Device3 TB Stop");
+                        Logger.save3B("Stop");
+                        last_start_delay_time3B = DateTime.Now;
+                    }
+
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time4B).TotalMilliseconds) & !messageReceived4B)
+                    {
+                        PrintLog("Omega", "Device4 TB Stop");
+                        Logger.save4B("Stop");
+                        last_start_delay_time4B = DateTime.Now;
+                    }
+
+                    if ((RECVTIMEOUT < DateTime.Now.Subtract(last_start_delay_time5B).TotalMilliseconds) & !messageReceived5B)
+                    {
+                        PrintLog("Omega", "Device5 TB Stop");
+                        Logger.save5B("Stop");
+                        last_start_delay_time5B = DateTime.Now;
                     }
 
                     Thread.Sleep(100);
-
                 }
             }
         }
 
         public override void init()
         {
+            e = new IPEndPoint(IPAddress.Any, 2000);
+            u = new UdpClient(e);
+            s = new UdpState();
+
             base.init();
         }
         public override void terminate()
         {
             thread_run = false;
 
+            Logger.finish(); 
+
+            u.Close(); 
+
             // xml 저장 
             //Thread.CurrentThread.Join();
-            Thread.CurrentThread.Interrupt();
+            //Thread.CurrentThread.Interrupt();
 
             base.terminate();
-
-
         }
 
         public void SaveIPAddress(string IP, int PortNum)
@@ -579,17 +843,29 @@ namespace OmegaTempCollector.Control
             Device5 = new Device();
 
 
-            last_start_delay_time1 = DateTime.Now;
-            last_start_delay_time2 = DateTime.Now;
-            last_start_delay_time3 = DateTime.Now;
-            last_start_delay_time4 = DateTime.Now;
-            last_start_delay_time5 = DateTime.Now;
+            last_start_delay_time1A = DateTime.Now;
+            last_start_delay_time2A = DateTime.Now;
+            last_start_delay_time3A = DateTime.Now;
+            last_start_delay_time4A = DateTime.Now;
+            last_start_delay_time5A = DateTime.Now;
 
-            Logger.save1("start");
-            Logger.save2("start");
-            Logger.save3("start");
-            Logger.save4("start");
-            Logger.save5("start");
+            last_start_delay_time1B = DateTime.Now;
+            last_start_delay_time2B = DateTime.Now;
+            last_start_delay_time3B = DateTime.Now;
+            last_start_delay_time4B = DateTime.Now;
+            last_start_delay_time5B = DateTime.Now;
+
+            Logger.save1A("start");
+            Logger.save2A("start");
+            Logger.save3A("start");
+            Logger.save4A("start");
+            Logger.save5A("start");
+
+            Logger.save1B("start");
+            Logger.save2B("start");
+            Logger.save3B("start");
+            Logger.save4B("start");
+            Logger.save5B("start");
 
             //SaveIPAddress(Address,Int32.Parse(PortNum));
 
@@ -597,11 +873,17 @@ namespace OmegaTempCollector.Control
             
             state = State.Ready; 
 
-            Temprature1 = "0";
-            Temprature2 = "0";
-            Temprature3 = "0";
-            Temprature4 = "0";
-            Temprature5 = "0";
+            Temprature1A = "0";
+            Temprature2A = "0";
+            Temprature3A = "0";
+            Temprature4A = "0";
+            Temprature5A = "0";
+
+            Temprature1B = "0";
+            Temprature2B = "0";
+            Temprature3B = "0";
+            Temprature4B = "0";
+            Temprature5B = "0";
 
             (new Thread(() =>
             {
@@ -626,6 +908,7 @@ namespace OmegaTempCollector.Control
                 {
                     PrintLog("Omega", "Stop");
                     Logger.info("Stop");
+                    Thread.CurrentThread.Join();
                 }
 
             })).Start();
@@ -638,16 +921,19 @@ namespace OmegaTempCollector.Control
             thread_run = false;
             state = State.Stop;
 
-            
-
-
             Logger.info("AP stop");
 
-            Logger.save1("AP stop");
-            Logger.save2("AP stop");
-            Logger.save3("AP stop");
-            Logger.save4("AP stop");
-            Logger.save5("AP stop");
+            Logger.save1A("AP stop");
+            Logger.save2A("AP stop");
+            Logger.save3A("AP stop");
+            Logger.save4A("AP stop");
+            Logger.save5A("AP stop");
+
+            Logger.save1B("AP stop");
+            Logger.save2B("AP stop");
+            Logger.save3B("AP stop");
+            Logger.save4B("AP stop");
+            Logger.save5B("AP stop");
 
             base.stop(byError);
         }

@@ -327,71 +327,169 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="2*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="2*" />
+
+                <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="2*" />
+
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+            <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10 5 0">
+                <Border.Background>
+                    <SolidColorBrush Color="Green"/>
+                </Border.Background>
+                <TextBlock Text="DEVICE1" Foreground="Black" Margin="0,0,0,0"  FontSize="30" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Margin="2 2 2 2" >
                 <Border.Background>
                     <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border.Background>
                 <Viewbox Stretch="None" >
-                    <TextBlock Name="tb1" Text="DEVICE1" FontSize="30" Grid.ColumnSpan="1">
+                    <TextBlock Name="tb1A" Text="DEVICE1A" FontSize="30" Grid.ColumnSpan="1">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="White"/>
                         </TextBlock.Foreground>
                     </TextBlock>
                 </Viewbox>
             </Border>
-            <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+            <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Margin="2 2 2 2" >
                 <Border.Background>
                     <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border.Background>
                 <Viewbox Stretch="None" >
-                    <TextBlock Name="tb2" Text="DEVICE2" FontSize="30" Grid.ColumnSpan="1">
+                    <TextBlock Name="tb1B" Text="DEVICE1B" FontSize="30" Grid.ColumnSpan="1">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="White"/>
                         </TextBlock.Foreground>
                     </TextBlock>
                 </Viewbox>
             </Border>
-            <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+            <Border Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1" Margin="2 2 2 2" >
                 <Border.Background>
                     <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border.Background>
                 <Viewbox Stretch="None" >
-                    <TextBlock Name="tb3" Text="DEVICE3" FontSize="30" Grid.ColumnSpan="1">
+                    <TextBlock Name="tb2A" Text="DEVICE2A" FontSize="30" Grid.ColumnSpan="1">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="White"/>
                         </TextBlock.Foreground>
                     </TextBlock>
                 </Viewbox>
             </Border>
-            <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+            <Border Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="0 10 5 0">
+                <Border.Background>
+                    <SolidColorBrush Color="Green"/>
+                </Border.Background>
+                <TextBlock Text="DEVICE2" Foreground="Black" Margin="0,0,0,0"  FontSize="30" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" Margin="2 2 2 2" >
                 <Border.Background>
                     <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border.Background>
                 <Viewbox Stretch="None" >
-                    <TextBlock Name="tb4" Text="DEVICE4" FontSize="30" Grid.ColumnSpan="1">
+                    <TextBlock Name="tb2B" Text="DEVICE2B" FontSize="30" Grid.ColumnSpan="1">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="White"/>
                         </TextBlock.Foreground>
                     </TextBlock>
                 </Viewbox>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10 5 0">
+                <Border.Background>
+                    <SolidColorBrush Color="Green"/>
+                </Border.Background>
+                <TextBlock Text="DEVICE3" Foreground="Black" Margin="0,0,0,0"  FontSize="30" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center"/>
             </Border>
             <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1" Margin="2 2 2 2" >
                 <Border.Background>
                     <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border.Background>
                 <Viewbox Stretch="None" >
-                    <TextBlock Name="tb5" Text="DEVICE5" FontSize="30" Grid.ColumnSpan="1">
+                    <TextBlock Name="tb3A" Text="DEVICE3A" FontSize="30" Grid.ColumnSpan="1">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+                <Border.Background>
+                    <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
+                </Border.Background>
+                <Viewbox Stretch="None" >
+                    <TextBlock Name="tb3B" Text="DEVICE3B" FontSize="30" Grid.ColumnSpan="1">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+                <Border.Background>
+                    <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
+                </Border.Background>
+                <Viewbox Stretch="None" >
+                    <TextBlock Name="tb4A" Text="DEVICE4A" FontSize="30" Grid.ColumnSpan="1">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="0 10 5 0">
+                <Border.Background>
+                    <SolidColorBrush Color="Green"/>
+                </Border.Background>
+                <TextBlock Text="DEVICE4" Foreground="Black" Margin="0,0,0,0"  FontSize="30" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+                <Border.Background>
+                    <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
+                </Border.Background>
+                <Viewbox Stretch="None" >
+                    <TextBlock Name="tb4B" Text="DEVICE4B" FontSize="30" Grid.ColumnSpan="1">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 10 5 0">
+                <Border.Background>
+                    <SolidColorBrush Color="Green"/>
+                </Border.Background>
+                <TextBlock Text="DEVICE5" Foreground="Black" Margin="0,0,0,0"  FontSize="30" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+                <Border.Background>
+                    <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
+                </Border.Background>
+                <Viewbox Stretch="None" >
+                    <TextBlock Name="tb5A" Text="DEVICE5A" FontSize="30" Grid.ColumnSpan="1">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1" Margin="2 2 2 2" >
+                <Border.Background>
+                    <SolidColorBrush Color="{Binding ColorPanelBack, UpdateSourceTrigger=PropertyChanged}"/>
+                </Border.Background>
+                <Viewbox Stretch="None" >
+                    <TextBlock Name="tb5B" Text="DEVICE5B" FontSize="30" Grid.ColumnSpan="1">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="White"/>
                         </TextBlock.Foreground>
@@ -399,13 +497,22 @@
                 </Viewbox>
             </Border>
 
-            <TextBlock Text="Temperature (°C)" Foreground="White" Margin="0,0,0,0"  FontSize="30" Grid.RowSpan="1"  Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center"/>
-            <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=Temprature1, Mode=TwoWay}" IsReadOnly="True" FontSize="50" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Temprature2, Mode=TwoWay}" IsReadOnly="True" FontSize="50" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
-            <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=Temprature3, Mode=TwoWay}" IsReadOnly="True" FontSize="50" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=Temprature4, Mode=TwoWay}" IsReadOnly="True" FontSize="50" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
-            <TextBox Grid.Row="6" Grid.Column="0" Text="{Binding Path=Temprature5, Mode=TwoWay}" IsReadOnly="True" FontSize="50" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+            <TextBlock Text="Temperature (°C)" Foreground="White" Margin="0,0,0,0"  FontSize="30" Grid.RowSpan="1"  Grid.ColumnSpan="4" VerticalAlignment="Center"   HorizontalAlignment="Center"/>
 
+            <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=Temprature1A, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Temprature1B, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+            <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=Temprature2A, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+            <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=Temprature2B, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+            <TextBox Grid.Row="6" Grid.Column="0" Text="{Binding Path=Temprature3A, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=Temprature3B, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+            <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding Path=Temprature4A, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+            <TextBox Grid.Row="6" Grid.Column="3" Text="{Binding Path=Temprature4B, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+            <TextBox Grid.Row="9" Grid.Column="0" Text="{Binding Path=Temprature5A, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+            <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=Temprature5B, Mode=TwoWay}" IsReadOnly="True" FontSize="40" Foreground="#FFFFFF" Background="#2D2D30" Margin="5,2,5,4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="1" />
         </Grid>
 
         <local:LogControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lsLog"  Margin="5" />
