@@ -60,11 +60,17 @@ namespace OmegaTempCollector.Common
         //static string logfile = AppDomain.CurrentDomain.BaseDirectory + "log_" + DateTime.Now.ToLongDateString() + ".txt";
         static string logfile = "./log/log_" + DateTime.Now.ToLongDateString() + ".txt";
         //static string savelogfile = "./log/Data_" + DateTime.Now.Year + ".txt";
-        static string savelogfile1 = "./log/Data_Device1_" + DateTime.Now.Year + ".txt";
-        static string savelogfile2 = "./log/Data_Device2_" + DateTime.Now.Year + ".txt";
-        static string savelogfile3 = "./log/Data_Device3_" + DateTime.Now.Year + ".txt";
-        static string savelogfile4 = "./log/Data_Device4_" + DateTime.Now.Year + ".txt";
-        static string savelogfile5 = "./log/Data_Device5_" + DateTime.Now.Year + ".txt";
+        static string savelogfile1A = "./log/Data_Device1A_" + DateTime.Now.Year + ".txt";
+        static string savelogfile2A = "./log/Data_Device2A_" + DateTime.Now.Year + ".txt";
+        static string savelogfile3A = "./log/Data_Device3A_" + DateTime.Now.Year + ".txt";
+        static string savelogfile4A = "./log/Data_Device4A_" + DateTime.Now.Year + ".txt";
+        static string savelogfile5A = "./log/Data_Device5A_" + DateTime.Now.Year + ".txt";
+
+        static string savelogfile1B = "./log/Data_Device1B_" + DateTime.Now.Year + ".txt";
+        static string savelogfile2B = "./log/Data_Device2B_" + DateTime.Now.Year + ".txt";
+        static string savelogfile3B = "./log/Data_Device3B_" + DateTime.Now.Year + ".txt";
+        static string savelogfile4B = "./log/Data_Device4B_" + DateTime.Now.Year + ".txt";
+        static string savelogfile5B = "./log/Data_Device5B_" + DateTime.Now.Year + ".txt";
 
         public static string ERROR = "E";
         public static string WARN = "W";
@@ -73,18 +79,30 @@ namespace OmegaTempCollector.Common
         public static string SAVE = "S";
 
         static ManagedThread workerThread = null;
-        static ManagedThread workerThread1 = null;
-        static ManagedThread workerThread2 = null;
-        static ManagedThread workerThread4 = null;
-        static ManagedThread workerThread3 = null;
-        static ManagedThread workerThread5 = null;
+        static ManagedThread workerThread1A = null;
+        static ManagedThread workerThread2A = null;
+        static ManagedThread workerThread4A = null;
+        static ManagedThread workerThread3A = null;
+        static ManagedThread workerThread5A = null;
+
+        static ManagedThread workerThread1B = null;
+        static ManagedThread workerThread2B = null;
+        static ManagedThread workerThread4B = null;
+        static ManagedThread workerThread3B = null;
+        static ManagedThread workerThread5B = null;
 
         static ConcurrentQueue<string> queue = new ConcurrentQueue<string>();
-        static ConcurrentQueue<string> queue1 = new ConcurrentQueue<string>();
-        static ConcurrentQueue<string> queue2 = new ConcurrentQueue<string>();
-        static ConcurrentQueue<string> queue3 = new ConcurrentQueue<string>();
-        static ConcurrentQueue<string> queue4 = new ConcurrentQueue<string>();
-        static ConcurrentQueue<string> queue5 = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue1A = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue2A = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue3A = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue4A = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue5A = new ConcurrentQueue<string>();
+
+        static ConcurrentQueue<string> queue1B = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue2B = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue3B = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue4B = new ConcurrentQueue<string>();
+        static ConcurrentQueue<string> queue5B = new ConcurrentQueue<string>();
 
         #region Log writer thread 
         static bool DoWork(UInt64 called_count)
@@ -110,17 +128,17 @@ namespace OmegaTempCollector.Common
             return true;
         }
 
-        static bool DoSave1(UInt64 called_count)
+        static bool DoSave1A(UInt64 called_count)
         {
-            if (queue1.IsEmpty == false)
+            if (queue1A.IsEmpty == false)
             {
                 string log;
 
-                StreamWriter sw = new StreamWriter(savelogfile1, true);
+                StreamWriter sw = new StreamWriter(savelogfile1A, true);
 
                 string sPattern = "[S]";
 
-                while (queue1.TryDequeue(out log))
+                while (queue1A.TryDequeue(out log))
                 {
                     if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
                     {
@@ -133,17 +151,17 @@ namespace OmegaTempCollector.Common
             return true;
         }
 
-        static bool DoSave2(UInt64 called_count)
+        static bool DoSave2A(UInt64 called_count)
         {
-            if (queue2.IsEmpty == false)
+            if (queue2A.IsEmpty == false)
             {
                 string log;
 
-                StreamWriter sw = new StreamWriter(savelogfile2, true);
+                StreamWriter sw = new StreamWriter(savelogfile2A, true);
 
                 string sPattern = "[S]";
 
-                while (queue2.TryDequeue(out log))
+                while (queue2A.TryDequeue(out log))
                 {
                     if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
                     {
@@ -156,17 +174,17 @@ namespace OmegaTempCollector.Common
             return true;
         }
 
-        static bool DoSave3(UInt64 called_count)
+        static bool DoSave3A(UInt64 called_count)
         {
-            if (queue3.IsEmpty == false)
+            if (queue3A.IsEmpty == false)
             {
                 string log;
 
-                StreamWriter sw = new StreamWriter(savelogfile3, true);
+                StreamWriter sw = new StreamWriter(savelogfile3A, true);
 
                 string sPattern = "[S]";
 
-                while (queue3.TryDequeue(out log))
+                while (queue3A.TryDequeue(out log))
                 {
                     if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
                     {
@@ -179,17 +197,17 @@ namespace OmegaTempCollector.Common
             return true;
         }
 
-        static bool DoSave4(UInt64 called_count)
+        static bool DoSave4A(UInt64 called_count)
         {
-            if (queue4.IsEmpty == false)
+            if (queue4A.IsEmpty == false)
             {
                 string log;
 
-                StreamWriter sw = new StreamWriter(savelogfile4, true);
+                StreamWriter sw = new StreamWriter(savelogfile4A, true);
 
                 string sPattern = "[S]";
 
-                while (queue4.TryDequeue(out log))
+                while (queue4A.TryDequeue(out log))
                 {
                     if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
                     {
@@ -202,17 +220,17 @@ namespace OmegaTempCollector.Common
             return true;
         }
 
-        static bool DoSave5(UInt64 called_count)
+        static bool DoSave5A(UInt64 called_count)
         {
-            if (queue5.IsEmpty == false)
+            if (queue5A.IsEmpty == false)
             {
                 string log;
 
-                StreamWriter sw = new StreamWriter(savelogfile5, true);
+                StreamWriter sw = new StreamWriter(savelogfile5A, true);
 
                 string sPattern = "[S]";
 
-                while (queue5.TryDequeue(out log))
+                while (queue5A.TryDequeue(out log))
                 {
                     if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
                     {
@@ -225,7 +243,120 @@ namespace OmegaTempCollector.Common
             return true;
         }
 
+        static bool DoSave1B(UInt64 called_count)
+        {
+            if (queue1B.IsEmpty == false)
+            {
+                string log;
 
+                StreamWriter sw = new StreamWriter(savelogfile1B, true);
+
+                string sPattern = "[S]";
+
+                while (queue1B.TryDequeue(out log))
+                {
+                    if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
+                    {
+                        Console.WriteLine(log);
+                        sw.WriteLine(log);
+                    }
+                }
+                sw.Close();
+            }
+            return true;
+        }
+
+        static bool DoSave2B(UInt64 called_count)
+        {
+            if (queue2B.IsEmpty == false)
+            {
+                string log;
+
+                StreamWriter sw = new StreamWriter(savelogfile2B, true);
+
+                string sPattern = "[S]";
+
+                while (queue2B.TryDequeue(out log))
+                {
+                    if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
+                    {
+                        Console.WriteLine(log);
+                        sw.WriteLine(log);
+                    }
+                }
+                sw.Close();
+            }
+            return true;
+        }
+
+        static bool DoSave3B(UInt64 called_count)
+        {
+            if (queue3B.IsEmpty == false)
+            {
+                string log;
+
+                StreamWriter sw = new StreamWriter(savelogfile3B, true);
+
+                string sPattern = "[S]";
+
+                while (queue3B.TryDequeue(out log))
+                {
+                    if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
+                    {
+                        Console.WriteLine(log);
+                        sw.WriteLine(log);
+                    }
+                }
+                sw.Close();
+            }
+            return true;
+        }
+
+        static bool DoSave4B(UInt64 called_count)
+        {
+            if (queue4B.IsEmpty == false)
+            {
+                string log;
+
+                StreamWriter sw = new StreamWriter(savelogfile4B, true);
+
+                string sPattern = "[S]";
+
+                while (queue4B.TryDequeue(out log))
+                {
+                    if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
+                    {
+                        Console.WriteLine(log);
+                        sw.WriteLine(log);
+                    }
+                }
+                sw.Close();
+            }
+            return true;
+        }
+
+        static bool DoSave5B(UInt64 called_count)
+        {
+            if (queue5B.IsEmpty == false)
+            {
+                string log;
+
+                StreamWriter sw = new StreamWriter(savelogfile5B, true);
+
+                string sPattern = "[S]";
+
+                while (queue5B.TryDequeue(out log))
+                {
+                    if (System.Text.RegularExpressions.Regex.IsMatch(log, sPattern))
+                    {
+                        Console.WriteLine(log);
+                        sw.WriteLine(log);
+                    }
+                }
+                sw.Close();
+            }
+            return true;
+        }
 
         public static void start()
         {       
@@ -236,34 +367,64 @@ namespace OmegaTempCollector.Common
                 workerThread.Start();
             }
 
-            if (workerThread1 == null)
+            if (workerThread1A == null)
             {
-                workerThread1 = new ManagedThread("Logger", DoSave1);
-                workerThread1.Start();
+                workerThread1A = new ManagedThread("Logger", DoSave1A);
+                workerThread1A.Start();
             }
 
-            if (workerThread2 == null)
+            if (workerThread2A == null)
             {
-                workerThread2 = new ManagedThread("Logger", DoSave2);
-                workerThread2.Start();
+                workerThread2A = new ManagedThread("Logger", DoSave2A);
+                workerThread2A.Start();
             }
 
-            if (workerThread3 == null)
+            if (workerThread3A == null)
             {
-                workerThread3 = new ManagedThread("Logger", DoSave3);
-                workerThread3.Start();
+                workerThread3A = new ManagedThread("Logger", DoSave3A);
+                workerThread3A.Start();
             }
 
-            if (workerThread4 == null)
+            if (workerThread4A == null)
             {
-                workerThread4 = new ManagedThread("Logger", DoSave4);
-                workerThread4.Start();
+                workerThread4A = new ManagedThread("Logger", DoSave4A);
+                workerThread4A.Start();
             }
 
-            if (workerThread5 == null)
+            if (workerThread5A == null)
             {
-                workerThread5 = new ManagedThread("Logger", DoSave5);
-                workerThread5.Start();
+                workerThread5A = new ManagedThread("Logger", DoSave5A);
+                workerThread5A.Start();
+            }
+
+            if (workerThread1B == null)
+            {
+                workerThread1B = new ManagedThread("Logger", DoSave1B);
+                workerThread1B.Start();
+            }
+
+            if (workerThread2B == null)
+            {
+                workerThread2B = new ManagedThread("Logger", DoSave2B);
+                workerThread2B.Start();
+            }
+
+            if (workerThread3B == null)
+            {
+                workerThread3B = new ManagedThread("Logger", DoSave3B);
+                workerThread3B.Start();
+            }
+
+            if (workerThread4B == null)
+            {
+                workerThread4B = new ManagedThread("Logger", DoSave4B);
+                workerThread4B.Start();
+            }
+
+            if (workerThread5B == null)
+            {
+                workerThread5B = new ManagedThread("Logger", DoSave5B);
+                workerThread5B.Start();
             }
         }
 
@@ -277,44 +438,84 @@ namespace OmegaTempCollector.Common
                 workerThread = null;
             }
 
-            if (workerThread1 != null)
+            if (workerThread1A != null)
             {
-                workerThread1.Stop();
-                workerThread1.Join();
+                workerThread1A.Stop();
+                workerThread1A.Join();
 
-                workerThread1 = null;
+                workerThread1A = null;
             }
 
-            if (workerThread2 != null)
+            if (workerThread2A != null)
             {
-                workerThread2.Stop();
-                workerThread2.Join();
+                workerThread2A.Stop();
+                workerThread2A.Join();
 
-                workerThread2 = null;
+                workerThread2A = null;
             }
 
-            if (workerThread3 != null)
+            if (workerThread3A != null)
             {
-                workerThread3.Stop();
-                workerThread3.Join();
+                workerThread3A.Stop();
+                workerThread3A.Join();
 
-                workerThread3 = null;
+                workerThread3A = null;
             }
 
-            if (workerThread4 != null)
+            if (workerThread4A != null)
             {
-                workerThread4.Stop();
-                workerThread4.Join();
+                workerThread4A.Stop();
+                workerThread4A.Join();
 
-                workerThread4 = null;
+                workerThread4A = null;
             }
 
-            if (workerThread5 != null)
+            if (workerThread5A != null)
             {
-                workerThread5.Stop();
-                workerThread5.Join();
+                workerThread5A.Stop();
+                workerThread5A.Join();
 
-                workerThread5 = null;
+                workerThread5A = null;
+            }
+
+            if (workerThread1B != null)
+            {
+                workerThread1B.Stop();
+                workerThread1B.Join();
+
+                workerThread1B = null;
+            }
+
+            if (workerThread2B != null)
+            {
+                workerThread2B.Stop();
+                workerThread2B.Join();
+
+                workerThread2B = null;
+            }
+
+            if (workerThread3B != null)
+            {
+                workerThread3B.Stop();
+                workerThread3B.Join();
+
+                workerThread3B = null;
+            }
+
+            if (workerThread4B != null)
+            {
+                workerThread4B.Stop();
+                workerThread4B.Join();
+
+                workerThread4B = null;
+            }
+
+            if (workerThread5B != null)
+            {
+                workerThread5B.Stop();
+                workerThread5B.Join();
+
+                workerThread5B = null;
             }
 
         }
@@ -324,9 +525,9 @@ namespace OmegaTempCollector.Common
         public static void log(string tag, string message)
         {
             string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
-            if (workerThread1 != null)
+            if (workerThread != null)
             {
-                queue1.Enqueue(log);
+                queue.Enqueue(log);
                 log = "." + log;
             }
             else
@@ -340,12 +541,12 @@ namespace OmegaTempCollector.Common
             System.Diagnostics.Debug.Print(log);
         }
 
-        public static void log1(string tag, string message)
+        public static void log1A(string tag, string message)
         {
             string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
-            if (workerThread1 != null)
+            if (workerThread1A != null)
             {
-                queue1.Enqueue(log);
+                queue1A.Enqueue(log);
                 log = "." + log;
             }
             else
@@ -358,12 +559,12 @@ namespace OmegaTempCollector.Common
 
             System.Diagnostics.Debug.Print(log);
         }
-        public static void log2(string tag, string message)
+        public static void log2A(string tag, string message)
         {
             string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
-            if (workerThread2 != null)
+            if (workerThread2A != null)
             {
-                queue2.Enqueue(log);
+                queue2A.Enqueue(log);
                 log = "." + log;
             }
             else
@@ -377,12 +578,12 @@ namespace OmegaTempCollector.Common
             System.Diagnostics.Debug.Print(log);
         }
 
-        public static void log3(string tag, string message)
+        public static void log3A(string tag, string message)
         {
             string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
-            if (workerThread1 != null)
+            if (workerThread3A != null)
             {
-                queue3.Enqueue(log);
+                queue3A.Enqueue(log);
                 log = "." + log;
             }
             else
@@ -396,12 +597,12 @@ namespace OmegaTempCollector.Common
             System.Diagnostics.Debug.Print(log);
         }
 
-        public static void log4(string tag, string message)
+        public static void log4A(string tag, string message)
         {
             string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
-            if (workerThread4 != null)
+            if (workerThread4A != null)
             {
-                queue4.Enqueue(log);
+                queue4A.Enqueue(log);
                 log = "." + log;
             }
             else
@@ -415,12 +616,12 @@ namespace OmegaTempCollector.Common
             System.Diagnostics.Debug.Print(log);
         }
 
-        public static void log5(string tag, string message)
+        public static void log5A(string tag, string message)
         {
             string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
-            if (workerThread5 != null)
+            if (workerThread5A != null)
             {
-                queue5.Enqueue(log);
+                queue5A.Enqueue(log);
                 log = "." + log;
             }
             else
@@ -434,6 +635,99 @@ namespace OmegaTempCollector.Common
             System.Diagnostics.Debug.Print(log);
         }
 
+        public static void log1B(string tag, string message)
+        {
+            string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
+            if (workerThread1B != null)
+            {
+                queue1B.Enqueue(log);
+                log = "." + log;
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(logfile, true);
+                sw.WriteLine(log);
+                sw.Flush();
+                sw.Close();
+            }
+
+            System.Diagnostics.Debug.Print(log);
+        }
+        public static void log2B(string tag, string message)
+        {
+            string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
+            if (workerThread2B != null)
+            {
+                queue2B.Enqueue(log);
+                log = "." + log;
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(logfile, true);
+                sw.WriteLine(log);
+                sw.Flush();
+                sw.Close();
+            }
+
+            System.Diagnostics.Debug.Print(log);
+        }
+
+        public static void log3B(string tag, string message)
+        {
+            string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
+            if (workerThread3B != null)
+            {
+                queue3B.Enqueue(log);
+                log = "." + log;
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(logfile, true);
+                sw.WriteLine(log);
+                sw.Flush();
+                sw.Close();
+            }
+
+            System.Diagnostics.Debug.Print(log);
+        }
+
+        public static void log4B(string tag, string message)
+        {
+            string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
+            if (workerThread4B != null)
+            {
+                queue4B.Enqueue(log);
+                log = "." + log;
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(logfile, true);
+                sw.WriteLine(log);
+                sw.Flush();
+                sw.Close();
+            }
+
+            System.Diagnostics.Debug.Print(log);
+        }
+
+        public static void log5B(string tag, string message)
+        {
+            string log = DateTime.Now.ToString() + " [" + tag + "] : " + message;
+            if (workerThread5B != null)
+            {
+                queue5B.Enqueue(log);
+                log = "." + log;
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(logfile, true);
+                sw.WriteLine(log);
+                sw.Flush();
+                sw.Close();
+            }
+
+            System.Diagnostics.Debug.Print(log);
+        }
 
 
         public static void error(string message)
@@ -461,28 +755,49 @@ namespace OmegaTempCollector.Common
             log(DEBUG, message);
         }
 
-        public static void save1(string message)
+        public static void save1A(string message)
         {
-            log1(SAVE, message);
+            log1A(SAVE, message);
         }
 
-        public static void save2(string message)
+        public static void save2A(string message)
         {
-            log2(SAVE, message);
+            log2A(SAVE, message);
         }
-        public static void save3(string message)
+        public static void save3A(string message)
         {
-            log3(SAVE, message);
+            log3A(SAVE, message);
         }
-        public static void save4(string message)
+        public static void save4A(string message)
         {
-            log4(SAVE, message);
+            log4A(SAVE, message);
         }
-        public static void save5(string message)
+        public static void save5A(string message)
         {
-            log5(SAVE, message);
+            log5A(SAVE, message);
         }
 
+        public static void save1B(string message)
+        {
+            log1B(SAVE, message);
+        }
+
+        public static void save2B(string message)
+        {
+            log2B(SAVE, message);
+        }
+        public static void save3B(string message)
+        {
+            log3B(SAVE, message);
+        }
+        public static void save4B(string message)
+        {
+            log4B(SAVE, message);
+        }
+        public static void save5B(string message)
+        {
+            log5B(SAVE, message);
+        }
 
         public static void WriteErrorLog(Exception ex)
         {
@@ -497,11 +812,17 @@ namespace OmegaTempCollector.Common
         public static void SetlogfileName(string logfileName1, string logfileName2, string logfileName3, string logfileName4, string logfileName5)
         {
              //logfile = "./log/log_" + logfileName + "_"+ DateTime.Now.ToLongDateString() + ".txt";
-            savelogfile1 = "./log/Data_" + logfileName1 + "_" + DateTime.Now.Year + ".txt";
-            savelogfile2 = "./log/Data_" + logfileName2 + "_" + DateTime.Now.Year + ".txt";
-            savelogfile3 = "./log/Data_" + logfileName3 + "_" + DateTime.Now.Year + ".txt";
-            savelogfile4 = "./log/Data_" + logfileName4 + "_" + DateTime.Now.Year + ".txt";
-            savelogfile5 = "./log/Data_" + logfileName5 + "_" + DateTime.Now.Year + ".txt";
+            savelogfile1A = "./log/Data_" + logfileName1 + "A_" + DateTime.Now.Year + ".txt";
+            savelogfile2A = "./log/Data_" + logfileName2 + "A_" + DateTime.Now.Year + ".txt";
+            savelogfile3A = "./log/Data_" + logfileName3 + "A_" + DateTime.Now.Year + ".txt";
+            savelogfile4A = "./log/Data_" + logfileName4 + "A_" + DateTime.Now.Year + ".txt";
+            savelogfile5A = "./log/Data_" + logfileName5 + "A_" + DateTime.Now.Year + ".txt";
+
+            savelogfile1B = "./log/Data_" + logfileName1 + "B_" + DateTime.Now.Year + ".txt";
+            savelogfile2B = "./log/Data_" + logfileName2 + "B_" + DateTime.Now.Year + ".txt";
+            savelogfile3B = "./log/Data_" + logfileName3 + "B_" + DateTime.Now.Year + ".txt";
+            savelogfile4B = "./log/Data_" + logfileName4 + "B_" + DateTime.Now.Year + ".txt";
+            savelogfile5B = "./log/Data_" + logfileName5 + "B_" + DateTime.Now.Year + ".txt";
 
         }
 
