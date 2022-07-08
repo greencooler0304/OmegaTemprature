@@ -26,40 +26,74 @@ namespace OmegaTempCollector.View
             InitializeComponent();
             loadModule();
 
-            Title1TextBox.Text = arrOmegaDevices[0].title;
+            // A 센서
+            Title1ATextBox.Text = arrOmegaDevices[0].TitleA;
             Address1TextBox.Text = arrOmegaDevices[0].IpAddress;
-            Correct1TextBox.Text = arrOmegaDevices[0].correction;
+            Correct1ATextBox.Text = arrOmegaDevices[0].correctionA;
 
-            if (arrOmegaDevices[0].plus == "true") Plus1ListBox.SelectedIndex = 0; 
-            else                                         Plus1ListBox.SelectedIndex = 1;
+            if (arrOmegaDevices[0].plusA == "true") Plus1AListBox.SelectedIndex = 0; 
+            else                                         Plus1AListBox.SelectedIndex = 1;
 
-            Title2TextBox.Text = arrOmegaDevices[1].title;
+            Title2ATextBox.Text = arrOmegaDevices[1].TitleA;
             Address2TextBox.Text = arrOmegaDevices[1].IpAddress;
-            Correct2TextBox.Text = arrOmegaDevices[1].correction;
+            Correct2ATextBox.Text = arrOmegaDevices[1].correctionA;
 
-            if (arrOmegaDevices[1].plus == "true") Plus2ListBox.SelectedIndex = 0;
-            else                                         Plus2ListBox.SelectedIndex = 1;
+            if (arrOmegaDevices[1].plusA == "true") Plus2AListBox.SelectedIndex = 0;
+            else                                         Plus2AListBox.SelectedIndex = 1;
 
-            Title3TextBox.Text = arrOmegaDevices[2].title;
+            Title3ATextBox.Text = arrOmegaDevices[2].TitleA;
             Address3TextBox.Text = arrOmegaDevices[2].IpAddress;
-            Correct3TextBox.Text = arrOmegaDevices[2].correction;
+            Correct3ATextBox.Text = arrOmegaDevices[2].correctionA;
 
-            if (arrOmegaDevices[2].plus == "true") Plus3ListBox.SelectedIndex = 0;
-            else Plus3ListBox.SelectedIndex = 1;
+            if (arrOmegaDevices[2].plusA == "true") Plus3AListBox.SelectedIndex = 0;
+            else Plus3AListBox.SelectedIndex = 1;
 
-            Title4TextBox.Text = arrOmegaDevices[3].title;
+            Title4ATextBox.Text = arrOmegaDevices[3].TitleA;
             Address4TextBox.Text = arrOmegaDevices[3].IpAddress;
-            Correct4TextBox.Text = arrOmegaDevices[3].correction;
+            Correct4ATextBox.Text = arrOmegaDevices[3].correctionA;
 
-            if (arrOmegaDevices[3].plus == "true") Plus4ListBox.SelectedIndex = 0;
-            else                                         Plus4ListBox.SelectedIndex = 1;
+            if (arrOmegaDevices[3].plusA == "true") Plus4AListBox.SelectedIndex = 0;
+            else                                         Plus4AListBox.SelectedIndex = 1;
 
-            Title5TextBox.Text = arrOmegaDevices[4].title;
+            Title5ATextBox.Text = arrOmegaDevices[4].TitleA;
             Address5TextBox.Text = arrOmegaDevices[4].IpAddress;
-            Correct5TextBox.Text = arrOmegaDevices[4].correction;
+            Correct5ATextBox.Text = arrOmegaDevices[4].correctionA;
 
-            if (arrOmegaDevices[4].plus == "true") Plus5ListBox.SelectedIndex = 0;
-            else Plus5ListBox.SelectedIndex = 1;
+            if (arrOmegaDevices[4].plusA == "true") Plus5AListBox.SelectedIndex = 0;
+            else Plus5AListBox.SelectedIndex = 1;
+
+            // B 센서
+
+            Title1BTextBox.Text = arrOmegaDevices[0].TitleB;
+            Correct1BTextBox.Text = arrOmegaDevices[0].correctionB;
+
+            if (arrOmegaDevices[0].plusB == "true") Plus1BListBox.SelectedIndex = 0;
+            else Plus1BListBox.SelectedIndex = 1;
+
+            Title2BTextBox.Text = arrOmegaDevices[1].TitleB;
+            Correct2BTextBox.Text = arrOmegaDevices[1].correctionB;
+
+            if (arrOmegaDevices[1].plusB == "true") Plus2BListBox.SelectedIndex = 0;
+            else Plus2BListBox.SelectedIndex = 1;
+
+            Title3BTextBox.Text = arrOmegaDevices[2].TitleB;
+            Correct3BTextBox.Text = arrOmegaDevices[2].correctionB;
+
+            if (arrOmegaDevices[2].plusB == "true") Plus3BListBox.SelectedIndex = 0;
+            else Plus3BListBox.SelectedIndex = 1;
+
+            Title4BTextBox.Text = arrOmegaDevices[3].TitleB;
+            Correct4BTextBox.Text = arrOmegaDevices[3].correctionB;
+
+            if (arrOmegaDevices[3].plusB == "true") Plus4BListBox.SelectedIndex = 0;
+            else Plus4BListBox.SelectedIndex = 1;
+
+            Title5BTextBox.Text = arrOmegaDevices[4].TitleB;
+            Correct5BTextBox.Text = arrOmegaDevices[4].correctionB;
+
+            if (arrOmegaDevices[4].plusB == "true") Plus5BListBox.SelectedIndex = 0;
+            else Plus5BListBox.SelectedIndex = 1;
+
         }
 
         void loadModule()
@@ -82,19 +116,24 @@ namespace OmegaTempCollector.View
         {
             [XmlAttribute] public string Name { get; set; }
             [XmlAttribute] public string Address { get; set; }
-            [XmlAttribute] public string Title { get; set; }
-            [XmlAttribute] public string Correction { get; set; }
-            [XmlAttribute] public string Plus { get; set; }
-
+            [XmlAttribute] public string TitleA { get; set; }
+            [XmlAttribute] public string TitleB { get; set; }
+            [XmlAttribute] public string CorrectionA { get; set; }
+            [XmlAttribute] public string CorrectionB { get; set; }
+            [XmlAttribute] public string PlusA { get; set; }
+            [XmlAttribute] public string PlusB { get; set; }
         }
 
         public struct OmegaDevice
         {
             public string IpAddress;
             public string Name;
-            public string title;
-            public string correction;
-            public string plus;
+            public string TitleA;
+            public string TitleB;
+            public string correctionA;
+            public string correctionB;
+            public string plusA;
+            public string plusB;
         }
 
         static List<OmegaDevice> arrOmegaDevices = new List<OmegaDevice>();
@@ -112,42 +151,57 @@ namespace OmegaTempCollector.View
                 OmegaDevice omgDevTemp;
 
                 omgDevTemp.Name = Device1.Name;
-                omgDevTemp.title = Device1.Title;
+                omgDevTemp.TitleA = Device1.TitleA;
+                omgDevTemp.TitleB = Device1.TitleB;
                 omgDevTemp.IpAddress = Device1.Address;
-                omgDevTemp.correction = Device1.Correction;
-                omgDevTemp.plus = Device1.Plus;
+                omgDevTemp.correctionA = Device1.CorrectionA;
+                omgDevTemp.correctionB = Device1.CorrectionB;
+                omgDevTemp.plusA = Device1.PlusA;
+                omgDevTemp.plusB = Device1.PlusB;
 
                 arrOmegaDevices.Add(omgDevTemp);
 
                 omgDevTemp.Name = Device2.Name;
-                omgDevTemp.title = Device2.Title;
+                omgDevTemp.TitleA = Device2.TitleA;
+                omgDevTemp.TitleB = Device2.TitleB;
                 omgDevTemp.IpAddress = Device2.Address;
-                omgDevTemp.correction = Device2.Correction;
-                omgDevTemp.plus = Device2.Plus;
+                omgDevTemp.correctionA = Device2.CorrectionA;
+                omgDevTemp.correctionB = Device2.CorrectionB;
+                omgDevTemp.plusA = Device2.PlusA;
+                omgDevTemp.plusB = Device2.PlusB;
 
                 arrOmegaDevices.Add(omgDevTemp);
 
                 omgDevTemp.Name = Device3.Name;
-                omgDevTemp.title = Device3.Title;
+                omgDevTemp.TitleA = Device3.TitleA;
+                omgDevTemp.TitleB = Device3.TitleB;
                 omgDevTemp.IpAddress = Device3.Address;
-                omgDevTemp.correction = Device3.Correction;
-                omgDevTemp.plus = Device3.Plus;
+                omgDevTemp.correctionA = Device3.CorrectionA;
+                omgDevTemp.correctionB = Device3.CorrectionB;
+                omgDevTemp.plusA = Device3.PlusA;
+                omgDevTemp.plusB = Device3.PlusB;
 
                 arrOmegaDevices.Add(omgDevTemp);
 
                 omgDevTemp.Name = Device4.Name;
-                omgDevTemp.title = Device4.Title;
+                omgDevTemp.TitleA = Device4.TitleA;
+                omgDevTemp.TitleB = Device4.TitleB;
                 omgDevTemp.IpAddress = Device4.Address;
-                omgDevTemp.correction = Device4.Correction;
-                omgDevTemp.plus = Device4.Plus;
+                omgDevTemp.correctionA = Device4.CorrectionA;
+                omgDevTemp.correctionB = Device4.CorrectionB;
+                omgDevTemp.plusA = Device4.PlusA;
+                omgDevTemp.plusB = Device4.PlusB;
 
                 arrOmegaDevices.Add(omgDevTemp);
 
                 omgDevTemp.Name = Device5.Name;
-                omgDevTemp.title = Device5.Title;
+                omgDevTemp.TitleA = Device5.TitleA;
+                omgDevTemp.TitleB = Device5.TitleB;
                 omgDevTemp.IpAddress = Device5.Address;
-                omgDevTemp.correction = Device5.Correction;
-                omgDevTemp.plus = Device5.Plus;
+                omgDevTemp.correctionA = Device5.CorrectionA;
+                omgDevTemp.correctionB = Device5.CorrectionB;
+                omgDevTemp.plusA = Device5.PlusA;
+                omgDevTemp.plusB = Device5.PlusB;
 
                 arrOmegaDevices.Add(omgDevTemp);
 
@@ -161,26 +215,47 @@ namespace OmegaTempCollector.View
         }
 
 
-        private void Title1TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Title1ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-          sensorOmegaTemp.Device1.Title = Title1TextBox.Text; 
+          sensorOmegaTemp.Device1.TitleA = Title1ATextBox.Text; 
         }
 
-        private void Title2TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Title2ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device2.Title = Title2TextBox.Text;
+            sensorOmegaTemp.Device2.TitleA = Title2ATextBox.Text;
         }
-        private void Title3TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Title3ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device3.Title = Title3TextBox.Text;
+            sensorOmegaTemp.Device3.TitleA = Title3ATextBox.Text;
         }
-        private void Title4TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Title4ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device4.Title = Title4TextBox.Text;
+            sensorOmegaTemp.Device4.TitleA = Title4ATextBox.Text;
         }
-        private void Title5TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Title5ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device5.Title = Title5TextBox.Text;
+            sensorOmegaTemp.Device5.TitleA = Title5ATextBox.Text;
+        }
+        private void Title1BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device1.TitleB = Title1BTextBox.Text;
+        }
+
+        private void Title2BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device2.TitleB = Title2BTextBox.Text;
+        }
+        private void Title3BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device3.TitleB = Title3BTextBox.Text;
+        }
+        private void Title4BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device4.TitleB = Title4BTextBox.Text;
+        }
+        private void Title5BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device5.TitleB = Title5BTextBox.Text;
         }
 
         private void Address1TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -205,36 +280,133 @@ namespace OmegaTempCollector.View
             sensorOmegaTemp.Device5.Address = Address5TextBox.Text;
         }
 
-        private void Correct1TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Correct1ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device1.Correction = Correct1TextBox.Text;
+            sensorOmegaTemp.Device1.CorrectionA = Correct1ATextBox.Text;
         }
 
-        private void Correct2TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Correct2ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device2.Correction = Correct2TextBox.Text;
+            sensorOmegaTemp.Device2.CorrectionA = Correct2ATextBox.Text;
         }
-        private void Correct3TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Correct3ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device3.Correction = Correct3TextBox.Text;
+            sensorOmegaTemp.Device3.CorrectionA = Correct3ATextBox.Text;
         }
-        private void Correct4TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Correct4ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device4.Correction = Correct4TextBox.Text;
+            sensorOmegaTemp.Device4.CorrectionA = Correct4ATextBox.Text;
         }
-        private void Correct5TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Correct5ATextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            sensorOmegaTemp.Device5.Correction = Correct5TextBox.Text;
+            sensorOmegaTemp.Device5.CorrectionA = Correct5ATextBox.Text;
         }
 
-        private void Plus1ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Correct1BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device1.CorrectionB = Correct1BTextBox.Text;
+        }
+
+        private void Correct2BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device2.CorrectionB = Correct2BTextBox.Text;
+        }
+        private void Correct3BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device3.CorrectionB = Correct3BTextBox.Text;
+        }
+        private void Correct4BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device4.CorrectionB = Correct4BTextBox.Text;
+        }
+        private void Correct5BTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            sensorOmegaTemp.Device5.CorrectionB = Correct5BTextBox.Text;
+        }
+
+        private void Plus1AListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(sensorOmegaTemp != null)
             {
-                if (Plus1ListBox.SelectedIndex == 0) sensorOmegaTemp.Device1.Plus = "true";
-                else sensorOmegaTemp.Device1.Plus = "false";
+                if (Plus1AListBox.SelectedIndex == 0) sensorOmegaTemp.Device1.PlusA = "true";
+                else sensorOmegaTemp.Device1.PlusA = "false";
             }
-        }   
+        }
+
+        private void Plus2AListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus2AListBox.SelectedIndex == 0) sensorOmegaTemp.Device1.PlusA = "true";
+                else sensorOmegaTemp.Device2.PlusA = "false";
+            }
+        }
+        private void Plus3AListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus3AListBox.SelectedIndex == 0) sensorOmegaTemp.Device3.PlusA = "true";
+                else sensorOmegaTemp.Device3.PlusA = "false";
+            }
+        }
+        private void Plus4AListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus4AListBox.SelectedIndex == 0) sensorOmegaTemp.Device4.PlusA = "true";
+                else sensorOmegaTemp.Device4.PlusA = "false";
+            }
+        }
+        private void Plus5AListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus5AListBox.SelectedIndex == 0) sensorOmegaTemp.Device5.PlusA = "true";
+                else sensorOmegaTemp.Device5.PlusA = "false";
+            }
+        }
+
+        private void Plus1BListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus1BListBox.SelectedIndex == 0) sensorOmegaTemp.Device1.PlusB = "true";
+                else sensorOmegaTemp.Device1.PlusB = "false";
+            }
+        }
+
+        private void Plus2BListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus2BListBox.SelectedIndex == 0) sensorOmegaTemp.Device1.PlusB = "true";
+                else sensorOmegaTemp.Device2.PlusB = "false";
+            }
+        }
+        private void Plus3BListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus3BListBox.SelectedIndex == 0) sensorOmegaTemp.Device3.PlusB = "true";
+                else sensorOmegaTemp.Device3.PlusB = "false";
+            }
+        }
+        private void Plus4BListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus4BListBox.SelectedIndex == 0) sensorOmegaTemp.Device4.PlusB = "true";
+                else sensorOmegaTemp.Device4.PlusB = "false";
+            }
+        }
+        private void Plus5BListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sensorOmegaTemp != null)
+            {
+                if (Plus5BListBox.SelectedIndex == 0) sensorOmegaTemp.Device5.PlusB = "true";
+                else sensorOmegaTemp.Device5.PlusB = "false";
+            }
+        }
 
         private void onSaveButton_Click(object sender, RoutedEventArgs e)
         {

@@ -18,62 +18,100 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label Content=" DEVICE 1" FontSize="25" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Row="1" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LawnGreen"/>
-        <Label Content=" DEVICE 2" FontSize="25" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Row="2" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LawnGreen"/>
-        <Label Content=" DEVICE 3" FontSize="25" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Row="3" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LawnGreen"/>
-        <Label Content=" DEVICE 4" FontSize="25" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Row="4" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LawnGreen"/>
-        <Label Content=" DEVICE 5" FontSize="25" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Row="5" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LawnGreen"/>
+        <Label Content=" DEVICE 1" FontSize="15" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Row="1" VerticalAlignment="Center" Width="100" Foreground="Black" Background="LawnGreen"/>
+        <Label Content=" DEVICE 2" FontSize="15" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Row="2" VerticalAlignment="Center" Width="100" Foreground="Black" Background="LawnGreen"/>
+        <Label Content=" DEVICE 3" FontSize="15" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Row="3" VerticalAlignment="Center" Width="100" Foreground="Black" Background="LawnGreen"/>
+        <Label Content=" DEVICE 4" FontSize="15" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Row="4" VerticalAlignment="Center" Width="100" Foreground="Black" Background="LawnGreen"/>
+        <Label Content=" DEVICE 5" FontSize="15" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Row="5" VerticalAlignment="Center" Width="100" Foreground="Black" Background="LawnGreen"/>
 
-        <Label Content="TITLE" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Column="1" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
-        <TextBox Name="Title1TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="1" Grid.Column="1" Text="" TextChanged="Title1TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Title2TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="2" Grid.Column="1" Text="" TextChanged="Title2TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Title3TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="3" Grid.Column="1" Text="" TextChanged="Title3TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Title4TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="4" Grid.Column="1" Text="" TextChanged="Title4TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Title5TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="5" Grid.Column="1" Text="" TextChanged="Title5TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
+        <Label Content="     ADDRESS" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="40" Grid.Column="1" VerticalAlignment="Center" Width="130"  Foreground="Black" Background="LightGray"/>
+        <TextBox Name="Address1TextBox" Margin="5,5,5,5" TextAlignment="Left" FontSize="15" Grid.Row="1" Grid.Column="1" Text="" TextChanged="Address1TextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Address2TextBox" Margin="5,5,5,5" TextAlignment="Left" FontSize="15" Grid.Row="2" Grid.Column="1" Text="" TextChanged="Address2TextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Address3TextBox" Margin="5,5,5,5" TextAlignment="Left" FontSize="15" Grid.Row="3" Grid.Column="1" Text="" TextChanged="Address3TextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Address4TextBox" Margin="5,5,5,5" TextAlignment="Left" FontSize="15" Grid.Row="4" Grid.Column="1" Text="" TextChanged="Address4TextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Address5TextBox" Margin="5,5,5,5" TextAlignment="Left" FontSize="15" Grid.Row="5" Grid.Column="1" Text="" TextChanged="Address5TextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
 
+        <Label Content=" TITLE_A" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Column="2" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
+        <TextBox Name="Title1ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="1" Grid.Column="2" Text="" TextChanged="Title1ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title2ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="2" Grid.Column="2" Text="" TextChanged="Title2ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title3ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="3" Grid.Column="2" Text="" TextChanged="Title3ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title4ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="4" Grid.Column="2" Text="" TextChanged="Title4ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title5ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="5" Grid.Column="2" Text="" TextChanged="Title5ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
 
-        <Label Content="ADDRESS" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Column="2" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
-        <TextBox Name="Address1TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="1" Grid.Column="2" Text="" TextChanged="Address1TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Address2TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="2" Grid.Column="2" Text="" TextChanged="Address2TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Address3TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="3" Grid.Column="2" Text="" TextChanged="Address3TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Address4TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="4" Grid.Column="2" Text="" TextChanged="Address4TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Address5TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="5" Grid.Column="2" Text="" TextChanged="Address5TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
+        <Label Content=" 보정값_A" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="left" VerticalContentAlignment="Center" Height="40" Grid.Column="3" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
+        <TextBox Name="Correct1ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="1" Grid.Column="3" Text="" TextChanged="Correct1ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct2ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="2" Grid.Column="3" Text="" TextChanged="Correct2ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct3ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="3" Grid.Column="3" Text="" TextChanged="Correct3ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct4ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="4" Grid.Column="3" Text="" TextChanged="Correct4ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct5ATextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="5" Grid.Column="3" Text="" TextChanged="Correct5ATextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
 
-        <Label Content="보정값" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Column="3" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
-        <TextBox Name="Correct1TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="1" Grid.Column="3" Text="" TextChanged="Correct1TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Correct2TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="2" Grid.Column="3" Text="" TextChanged="Correct2TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Correct3TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="3" Grid.Column="3" Text="" TextChanged="Correct3TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Correct4TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="4" Grid.Column="3" Text="" TextChanged="Correct4TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-        <TextBox Name="Correct5TextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="25" Grid.Row="5" Grid.Column="3" Text="" TextChanged="Correct5TextBox_TextChanged" VerticalAlignment="Center" Height="45"/>
-
-        <Label Content="보정연산" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="59" Grid.Column="4" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
-        <ListBox Name="Plus1ListBox" FontSize="15"  SelectionChanged="Plus1ListBox_SelectionChanged" Grid.Column="4" Grid.Row="1" Padding="0,0,5,0" SelectedIndex="0" >
+        <Label Content=" 보정연산_A" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="left" VerticalContentAlignment="Center" Height="40" Grid.Column="4" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
+        <ListBox Name="Plus1AListBox" Margin="5,10,5,10" FontSize="10"  SelectionChanged="Plus1AListBox_SelectionChanged" Grid.Column="4" Grid.Row="1" Padding="0,0,5,0" SelectedIndex="0" >
             <ListBoxItem Content="Plus"/>
             <ListBoxItem Content="Minus"/>
         </ListBox>
-        <ListBox Name="Plus2ListBox" FontSize="15"  Grid.Column="4" Grid.Row="2" Padding="0,0,5,0" SelectedIndex="0" >
+        <ListBox Name="Plus2AListBox" Margin="5,10,5,10" FontSize="10"  SelectionChanged="Plus2AListBox_SelectionChanged" Grid.Column="4" Grid.Row="2" Padding="0,0,5,0" SelectedIndex="0" >
             <ListBoxItem Content="Plus"/>
             <ListBoxItem Content="Minus"/>
         </ListBox>
-        <ListBox Name="Plus3ListBox" FontSize="15" Grid.Column="4" Grid.Row="3" Padding="0,0,5,0" SelectedIndex="0" >
+        <ListBox Name="Plus3AListBox" Margin="5,10,5,10" FontSize="10" SelectionChanged="Plus3AListBox_SelectionChanged" Grid.Column="4" Grid.Row="3" Padding="0,0,5,0" SelectedIndex="0" >
             <ListBoxItem Content="Plus"/>
             <ListBoxItem Content="Minus"/>
         </ListBox>
-        <ListBox Name="Plus4ListBox" FontSize="15" Grid.Column="4" Grid.Row="4" Padding="0,0,5,0" SelectedIndex="0" >
+        <ListBox Name="Plus4AListBox" Margin="5,10,5,10" FontSize="10" SelectionChanged="Plus4AListBox_SelectionChanged" Grid.Column="4" Grid.Row="4" Padding="0,0,5,0" SelectedIndex="0" >
             <ListBoxItem Content="Plus"/>
             <ListBoxItem Content="Minus"/>
         </ListBox>
-        <ListBox Name="Plus5ListBox" FontSize="15" Grid.Column="4" Grid.Row="5" Padding="0,0,5,0" SelectedIndex="0" >
+        <ListBox Name="Plus5AListBox" Margin="5,10,5,10" FontSize="10" SelectionChanged="Plus5AListBox_SelectionChanged" Grid.Column="4" Grid.Row="5" Padding="0,0,5,0" SelectedIndex="0" >
             <ListBoxItem Content="Plus"/>
             <ListBoxItem Content="Minus"/>
         </ListBox>
 
-        <Button Content="저장" Name="saveButton" Click="onSaveButton_Click" HorizontalAlignment="Center" Height="45" Grid.Row="6" VerticalAlignment="Center" Width="140"/>
-        <Button Content="취소" Name="cancelButton" Click="onCancelButton_Click" HorizontalAlignment="Center" Height="45" Grid.Row="6" Grid.Column="4" VerticalAlignment="Center" Width="140"/>
+        <Label Content=" TITLE_B" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="left" VerticalContentAlignment="Center" Height="40" Grid.Column="5" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
+        <TextBox Name="Title1BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="1" Grid.Column="5" Text="" TextChanged="Title1BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title2BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="2" Grid.Column="5" Text="" TextChanged="Title2BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title3BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="3" Grid.Column="5" Text="" TextChanged="Title3BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title4BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="4" Grid.Column="5" Text="" TextChanged="Title4BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Title5BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="5" Grid.Column="5" Text="" TextChanged="Title5BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+
+        <Label Content=" 보정값_B" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Column="6" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
+        <TextBox Name="Correct1BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="1" Grid.Column="6" Text="" TextChanged="Correct1BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct2BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="2" Grid.Column="6" Text="" TextChanged="Correct2BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct3BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="3" Grid.Column="6" Text="" TextChanged="Correct3BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct4BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="4" Grid.Column="6" Text="" TextChanged="Correct4BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+        <TextBox Name="Correct5BTextBox" Margin="5,5,5,5" TextAlignment="Center" FontSize="20" Grid.Row="5" Grid.Column="6" Text="" TextChanged="Correct5BTextBox_TextChanged" VerticalAlignment="Center" Height="40"/>
+
+        <Label Content=" 보정연산_B" FontSize="15" FontStyle="Normal" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="40" Grid.Column="7" VerticalAlignment="Center" Width="140" Foreground="Black" Background="LightGray"/>
+        <ListBox Name="Plus1BListBox" Margin="5,10,5,10"  FontSize="10"  SelectionChanged="Plus1BListBox_SelectionChanged" Grid.Column="7" Grid.Row="1" Padding="0,0,5,0" SelectedIndex="0" >
+            <ListBoxItem Content="Plus"/>
+            <ListBoxItem Content="Minus"/>
+        </ListBox>
+        <ListBox Name="Plus2BListBox" Margin="5,10,5,10"  FontSize="10"  SelectionChanged="Plus2BListBox_SelectionChanged" Grid.Column="7" Grid.Row="2" Padding="0,0,5,0" SelectedIndex="0" >
+            <ListBoxItem Content="Plus"/>
+            <ListBoxItem Content="Minus"/>
+        </ListBox>
+        <ListBox Name="Plus3BListBox" Margin="5,10,5,10"  FontSize="10" SelectionChanged="Plus3BListBox_SelectionChanged" Grid.Column="7" Grid.Row="3" Padding="0,0,5,0" SelectedIndex="0" >
+            <ListBoxItem Content="Plus"/>
+            <ListBoxItem Content="Minus"/>
+        </ListBox>
+        <ListBox Name="Plus4BListBox" Margin="5,10,5,10"  FontSize="10" SelectionChanged="Plus4BListBox_SelectionChanged" Grid.Column="7" Grid.Row="4" Padding="0,0,5,0" SelectedIndex="0" >
+            <ListBoxItem Content="Plus"/>
+            <ListBoxItem Content="Minus"/>
+        </ListBox>
+        <ListBox Name="Plus5BListBox" Margin="5,10,5,10"  FontSize="10" SelectionChanged="Plus5BListBox_SelectionChanged" Grid.Column="7" Grid.Row="5" Padding="0,0,5,0" SelectedIndex="0" >
+            <ListBoxItem Content="Plus"/>
+            <ListBoxItem Content="Minus"/>
+        </ListBox>
+
+        <Button Content="저장" Name="saveButton" Click="onSaveButton_Click" HorizontalAlignment="Center" Height="45" Grid.Row="6" VerticalAlignment="Center" Width="80"/>
+        <Button Content="취소" Name="cancelButton" Margin="5,5,5,5" Click="onCancelButton_Click" HorizontalAlignment="Center" Height="45" Grid.Row="6" Grid.Column="7" VerticalAlignment="Center" Width="80"/>
     </Grid>
 </Window>
